@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+:root {
+    --primary-color: #007BFF;
+    --dark-color: #222;
+    --light-color: #f4f4f4;
+    --shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    line-height: 1.6;
+    background: var(--light-color);
+    color: var(--dark-color);
+}
+
+/* --- Navigation & Footer --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: #333;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.navbar .nav-brand { font-size: 1.5rem; font-weight: 700; color: white; text-decoration: none; }
+.navbar .nav-links a { color: white; text-decoration: none; margin: 0 1rem; padding-bottom: 5px; transition: all 0.3s ease; }
+.navbar .nav-links a:hover, .navbar .nav-links a.active { color: #ffb703; border-bottom: 2px solid #ffb703; }
+.navbar .icon { display: none; font-size: 1.5rem; cursor: pointer; color: white; text-decoration: none; }
+.footer { text-align: center; padding: 2rem; background: #333; color: white; }
+
+/* --- Hero Section --- */
+.hero { height: 90vh; display: flex; justify-content: center; align-items: center; text-align: center; color: white; background: linear-gradient(rgba(30,58,138,0.7), rgba(30,58,138,0.7)), url('https://images.unsplash.com/photo-1542744173-05336fcc7ad4?q=80&w=2070&auto=format&fit=crop') no-repeat center center/cover; 
+}
+.hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+.btn { display: inline-block; padding: 0.8rem 2rem; background: #ffb703; color: white; border: none; border-radius: 5px; text-decoration: none; margin-top: 1rem; transition: background 0.3s ease; }
+.btn:hover { background: #fca311; }
+
+/* --- Resume/Biodata Design --- */
+.resume-container {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    margin: 2rem auto;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.left-column {
+    background: white;
+    width: 35%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.name-section { margin: 1rem 0; }
+.name { font-family: 'Great Vibes', cursive; font-size: 2.5rem; color: #0077b6; margin: 0; }
+.title { margin: 0; font-weight: 600; }
+.contact-info { text-align: left; width: 100%; margin: 2rem 0; }
+.contact-info h3 { border-bottom: 2px solid #eee; padding-bottom: 5px; margin-bottom: 1rem; }
+.contact-info ul { list-style: none; padding: 0; }
+.contact-info li { margin-bottom: 0.8rem; display: flex; align-items: center; }
+.contact-info i { color: #0077b6; margin-right: 10px; width: 20px; text-align: center; }
+.signature { margin-top: auto; }
+.name-signature { font-family: 'Great Vibes', cursive; font-size: 2rem; }
+
+.right-column {
+    width: 65%;
+    padding: 3rem;
+    color: white;
+}
+.section-title { text-transform: uppercase; border-bottom: 2px solid white; padding-bottom: 10px; margin-bottom: 1rem; }
+.section ul { list-style-type: disc; padding-left: 20px; }
+.section ul li { margin-bottom: 0.5rem; }
+
+/* --- Responsive --- */
+@media screen and (max-width: 992px) {
+    .resume-container { flex-direction: column; }
+    .left-column, .right-column { width: 100%; box-sizing: border-box; }
+}
+@media screen and (max-width: 768px) {
+    .navbar .nav-links { display: none; flex-direction: column; width: 100%; position: absolute; top: 60px; left: 0; background: #333; }
+    .navbar .nav-links.responsive { display: flex; }
+    .navbar .nav-links a { padding: 1rem; text-align: center; border-bottom: none; }
+    .navbar .icon { display: block; }
+    .hero h1 { font-size: 2.5rem; }
+}
